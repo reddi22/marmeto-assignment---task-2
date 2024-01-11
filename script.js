@@ -1,7 +1,7 @@
 let showProducts = document.getElementById("showProducts");
-const menButton = document.getElementById("menButton");
-const womenButton = document.getElementById("womenButton");
-const kidsButton = document.getElementById("kidsButton");
+const menChoiceButton = document.getElementById("menChoiceButton");
+const womenChoiceButton = document.getElementById("womenChoiceButton");
+const kidsChoiceButton = document.getElementById("kidsChoiceButton");
 
 let productsData;
 let FilterProducts;
@@ -22,49 +22,49 @@ const createAndAppendProduct = (value) => {
 
     const productContainer = document.createElement("li");
     const productImgContainer = document.createElement("div");
-    const productImgEle = document.createElement("img");
-    const productImgBadgeEle = document.createElement("b");
-    const productTitleEle = document.createElement("h2");
-    const productVendorEle = document.createElement("h4");
-    const productPriceEle = document.createElement("span");
-    const productOrginalPriceEle = document.createElement("span");
-    const productPriceDiscountEle = document.createElement("span");
-    const productAddCartBtnEle = document.createElement("button");
+    const productImgElement = document.createElement("img");
+    const productImgBadgeElement = document.createElement("b");
+    const productTitleElement = document.createElement("h2");
+    const productVendorElement = document.createElement("h4");
+    const productPriceElement = document.createElement("span");
+    const productOrginalPriceElement = document.createElement("span");
+    const productPriceDiscountElement = document.createElement("span");
+    const productAddCartBtnElement = document.createElement("button");
     const divele = document.createElement('div');
 
-    productImgEle.src = image;
-    productImgEle.className = "product-img";
+    productImgElement.src = image;
+    productImgElement.className = "product-img";
     productImgContainer.className = "product-img-container";
-    productImgContainer.appendChild(productImgEle);
+    productImgContainer.appendChild(productImgElement);
     productContainer.appendChild(productImgContainer);
 
-    productImgBadgeEle.textContent = badge_text;
-    productImgBadgeEle.className = bagdeFound;
-    productImgContainer.appendChild(productImgBadgeEle);
+    productImgBadgeElement.textContent = badge_text;
+    productImgBadgeElement.className = bagdeFound;
+    productImgContainer.appendChild(productImgBadgeElement);
 
-    productTitleEle.textContent = title.slice(0, 22);
-    productTitleEle.className = "product-title";
-    productContainer.appendChild(productTitleEle);
+    productTitleElement.textContent = title.slice(0, 22);
+    productTitleElement.className = "product-title";
+    productContainer.appendChild(productTitleElement);
 
-    productVendorEle.textContent = vendor;
-    productVendorEle.className = "product-vendor";
-    productContainer.appendChild(productVendorEle);
+    productVendorElement.textContent = vendor;
+    productVendorElement.className = "product-vendor";
+    productContainer.appendChild(productVendorElement);
 
-    productPriceEle.textContent = "Rs " + price + '.00';
-    productPriceEle.className = "product-price";
-    productContainer.appendChild(productPriceEle);
+    productPriceElement.textContent = "Rs " + price + '.00';
+    productPriceElement.className = "product-price";
+    productContainer.appendChild(productPriceElement);
 
-    productOrginalPriceEle.textContent = compare_at_price;
-    productOrginalPriceEle.className = "procuct-original-price";
-    productContainer.appendChild(productOrginalPriceEle);
+    productOrginalPriceElement.textContent = compare_at_price;
+    productOrginalPriceElement.className = "procuct-original-price";
+    productContainer.appendChild(productOrginalPriceElement);
 
-    productPriceDiscountEle.textContent = discount + " " + "% off";
-    productPriceDiscountEle.className = "procuct-discount";
-    productContainer.appendChild(productPriceDiscountEle);
+    productPriceDiscountElement.textContent = discount + " " + "% off";
+    productPriceDiscountElement.className = "procuct-discount";
+    productContainer.appendChild(productPriceDiscountElement);
 
-    productAddCartBtnEle.textContent = "Add To Cart";
-    productAddCartBtnEle.className = "product-btn";
-    productContainer.appendChild(productAddCartBtnEle);
+    productAddCartBtnElement.textContent = "Add To Cart";
+    productAddCartBtnElement.className = "product-btn";
+    productContainer.appendChild(productAddCartBtnElement);
 
     productContainer.className = "product-container";
 
@@ -77,36 +77,36 @@ const loopEachProduct = (value) => {
     }
 };
 
-menButton.addEventListener("click", (e) => {
+menChoiceButton.addEventListener("click", (e) => {
     showProducts.textContent = "";
     selectedCategory = e.target.value;
-    menButton.className = "active-btn";
-    womenButton.className = "";
-    kidsButton.className = "";
+    menChoiceButton.className = "active-btn";
+    womenChoiceButton.className = "";
+    kidsChoiceButton.className = "";
     FilterProducts = productsData.find(
         (eachProduct) => eachProduct.category_name === selectedCategory
     );
     loopEachProduct(FilterProducts);
 });
 
-womenButton.addEventListener("click", (e) => {
+womenChoiceButton.addEventListener("click", (e) => {
     showProducts.textContent = "";
     selectedCategory = e.target.value;
-    menButton.className = "";
-    womenButton.className = "active-btn";
-    kidsButton.className = "";
+    menChoiceButton.className = "";
+    womenChoiceButton.className = "active-btn";
+    kidsChoiceButton.className = "";
     FilterProducts = productsData.find(
         (eachProduct) => eachProduct.category_name === selectedCategory
     );
     loopEachProduct(FilterProducts);
 });
 
-kidsButton.addEventListener("click", (e) => {
+kidsChoiceButton.addEventListener("click", (e) => {
     showProducts.textContent = "";
     selectedCategory = e.target.value;
-    menButton.className = "";
-    womenButton.className = "";
-    kidsButton.className = "active-btn";
+    menChoiceButton.className = "";
+    womenChoiceButton.className = "";
+    kidsChoiceButton.className = "active-btn";
     FilterProducts = productsData.find(
         (eachProduct) => eachProduct.category_name === selectedCategory
     );
