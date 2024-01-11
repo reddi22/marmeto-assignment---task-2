@@ -124,7 +124,7 @@ const fetchApi = async () => {
     const res = await req.json();
     productsData = res.categories;
     FilterProducts = productsData.find(
-        (eachProduct) => eachProduct.category_name === selectedCategory
+        (eachProduct) => eachProduct.category_name === selectedCategory;
     );
     loopEachProduct(FilterProducts);
 };
